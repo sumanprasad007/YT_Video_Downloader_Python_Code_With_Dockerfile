@@ -12,6 +12,19 @@ The code can be run in a Docker container to download the Youtube video, which p
 Docker
 
 # Dockerfile Explaination:
+The Dockerfile specifies the steps to build a Docker image for a Python application.
+
+FROM python:3.8-alpine: This line specifies the base image to be used for the Docker image. In this case, it is using the latest version of Python (3.8) on an Alpine Linux base image.
+
+COPY . /app: This line copies all the files in the current directory to a new directory named /app in the Docker image.
+
+WORKDIR /app: This line sets the working directory for the subsequent steps in the Dockerfile to /app.
+
+RUN pip install -r requirements.txt: This line runs the command pip install -r requirements.txt inside the Docker image. This command installs the dependencies specified in the requirements.txt file.
+
+CMD [ "python","yt_video_downloader.py" ]: This line sets the default command that will be run when a container is created from the image. The command [ "python","yt_video_downloader.py" ] runs the script yt_video_downloader.py using the Python interpreter.
+
+In summary, the Dockerfile builds an image based on the Alpine Linux distribution with Python 3.8 installed, copies all the files in the current directory to the /app directory in the image, sets the working directory to /app, installs the dependencies specified in the requirements.txt file, and sets the default command to run the yt_video_downloader.py script using the Python interpreter.
 
 Usage
 # Clone the repository
