@@ -4,6 +4,10 @@ This Docker container includes a script that uses the Pytube library to download
 
 # Code Explaination:
 
+The code imports the Pytube library and sets a default Youtube video URL to be used as an example. The URL is passed as a parameter to the YouTube method of the Pytube library, which returns a stream of the video. The highest resolution video stream is then selected and downloaded to the file path specified by the path variable (currently set to "C:").
+
+The code can be run in a Docker container to download the Youtube video, which provides an isolated environment for the script to run in. The Docker container can be created by building a Docker image using the provided Dockerfile and running the image as a container. The end-user will enter the Youtube video URL when prompted by the script running inside the container.
+
 # Requirements
 Docker
 Usage
